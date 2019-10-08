@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 
 function Form({ dispatch }) {
   const [todo, setTodo] = useState('');
+  const [dueDate, setDueDate] = useState('');
   console.log('this is the todo: Form.js: ', todo);
-
+  console.log('this is the dueDate: Form.js: ', dueDate);
   const handleChanges = event => {
     event.preventDefault();
     setTodo(event.target.value);
+  };
+
+  const handleDueDate = event => {
+    event.preventDefault();
+    setDueDate(event.target.value);
   };
 
   return (
@@ -19,6 +25,7 @@ function Form({ dispatch }) {
       }}
     >
       <input type='text' name='task' value={todo} onChange={handleChanges} />
+      <input type='date' onChange={handleDueDate} />
 
       <button type='submit'>Add to list</button>
       <button

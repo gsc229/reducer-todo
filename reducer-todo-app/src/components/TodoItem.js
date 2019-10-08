@@ -5,7 +5,9 @@ function TodoItem({ item, dispatch, id, completed }) {
   return (
     <div
       className={`task${completed ? ' completed' : ''}`}
-      onClick={() => dispatch({ type: 'TOGGLE_COMPLETED', payload: todoId })}
+      onClick={() => {
+        dispatch({ type: 'TOGGLE_COMPLETED', payload: todoId });
+      }}
     >
       <h1>{item}</h1>
     </div>
