@@ -19,7 +19,9 @@
 .task {
   cursor: pointer;
   background: green;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   padding-left: 10px;
+  color: whitesmoke;
 }
 
 .completed {
@@ -61,7 +63,13 @@
 button {
   height: 5vh;
   font-weight: bold;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: whitesmoke;
   background: none;
   border: 1px solid black;
   cursor: pointer;
+}
+
+input {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }

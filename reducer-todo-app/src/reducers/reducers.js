@@ -48,9 +48,6 @@ export function reducer(state, action) {
         todos: cleardTodos
       };
 
-    case 'DUE_DATE':
-    // function with new Date(); to compare with due date.  get Date() 2019-10-24 look at date methods.
-
     default:
       return state;
   }
