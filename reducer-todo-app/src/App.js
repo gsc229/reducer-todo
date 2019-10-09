@@ -7,7 +7,7 @@ import { reducer, initialValue } from './reducers/reducers';
 function App() {
   const [state, dispatch] = useReducer(reducer, initialValue);
   const alphaList = state.todos.sort((todoA, todoB) => {
-    return todoA.dueDate < todoB.dueDate ? 1 : -1;
+    return todoA.dueDate < todoB.dueDate ? -1 : 1;
   });
 
   console.log('App.js alphaList: ', alphaList);
