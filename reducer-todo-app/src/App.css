@@ -18,13 +18,16 @@
 
 .task {
   cursor: pointer;
-
-  background: red;
+  background: green;
   padding-left: 10px;
 }
 
 .completed {
   text-decoration: line-through;
+}
+
+.past-due {
+  background: red;
 }
 
 .todo-form {

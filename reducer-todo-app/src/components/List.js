@@ -2,7 +2,7 @@ import React from 'react';
 import TodoItem from './TodoItem';
 
 function List({ state, dispatch }) {
-  console.log('List.js todos', state.todos);
+  /* console.log('List.js todos', state.todos); */
 
   return (
     <div className='todo-list'>
@@ -14,6 +14,7 @@ function List({ state, dispatch }) {
           completed={todoObj.completed}
           dueDate={todoObj.dueDate}
           timeDue={todoObj.timeDue}
+          pastDue={todoObj.pastDue}
           dispatch={dispatch}
         />
       ))}

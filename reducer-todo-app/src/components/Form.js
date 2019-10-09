@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
+import moment from 'moment';
 
 function Form({ dispatch }) {
   const [todo, setTodo] = useState('');
   const [dueDate, setDueDate] = useState('');
   const [timeDue, setTimeDue] = useState('');
-  console.log('this is the todo: Form.js: ', todo);
-  console.log('this is the dueDate: Form.js: ', dueDate);
+  /* console.log('this is the todo: Form.js: ', todo);
+  console.log('this is the dueDate: Form.js: ', dueDate); */
+
+  let dateDue = moment(dueDate).format('YYYY-M-D');
+  let now = moment().format('YYYY-M-D');
+  let pastDue = moment(dateDue).isBefore(now);
+
   const handleChanges = event => {
     event.preventDefault();
     setTodo(event.target.value);
@@ -28,7 +34,12 @@ function Form({ dispatch }) {
         event.preventDefault();
         dispatch({
           type: 'ADD_TODO',
-          payload: { todo: todo, dueDate: dueDate, timeDue: timeDue }
+          payload: {
+            todo: todo,
+            dueDate: dueDate,
+            timeDue: timeDue,
+            pastDue: pastDue
+          }
         });
         setTodo('');
       }}

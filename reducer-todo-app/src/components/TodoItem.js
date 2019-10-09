@@ -1,11 +1,21 @@
 import React from 'react';
 import moment from 'moment';
 
-function TodoItem({ item, dispatch, id, completed, dueDate, timeDue }) {
+function TodoItem({
+  item,
+  dispatch,
+  id,
+  completed,
+  dueDate,
+  timeDue,
+  pastDue
+}) {
   const todoId = id;
+
   return (
     <div
-      className={`task${completed ? ' completed' : ''}`}
+      className={`task${completed ? ' completed' : ''}
+         ${pastDue ? ' past-due' : ''}`}
       onClick={() => {
         dispatch({ type: 'TOGGLE_COMPLETED', payload: todoId });
       }}
