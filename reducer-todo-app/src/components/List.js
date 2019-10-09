@@ -12,6 +12,8 @@ function List({ state, dispatch }) {
           item={todoObj.item}
           id={todoObj.id}
           completed={todoObj.completed}
+          dueDate={todoObj.dueDate}
+          timeDue={todoObj.timeDue}
           dispatch={dispatch}
         />
       ))}

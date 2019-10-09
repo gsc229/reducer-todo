@@ -1,20 +1,18 @@
+import * as moment from 'moment';
+
 export const initialValue = {
-  todos: [
-    {
-      item: 'Learn about reducers',
-      completed: false,
-      id: 3892987589
-    }
-  ]
+  todos: []
 };
 
 export function reducer(state, action) {
   switch (action.type) {
     case 'ADD_TODO':
       const newTodo = {
-        item: action.payload,
+        item: action.payload.todo,
         completed: false,
-        id: Date.now()
+        id: Date.now(),
+        dueDate: action.payload.dueDate,
+        timeDue: action.payload.timeDue
       };
 
       return {
@@ -44,7 +42,15 @@ export function reducer(state, action) {
         todos: cleardTodos
       };
 
+    case 'DUE_DATE':
+    // function with new Date(); to compare with due date.  get Date() 2019-10-24 look at date methods.
+
     default:
       return state;
   }
 }
+
+let momentTest = moment().format('YYYY-M-D');
+let date = '2019-10-15';
+let dueDate = moment(date);
+console.log(dueDate);
