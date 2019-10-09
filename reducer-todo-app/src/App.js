@@ -6,7 +6,15 @@ import { reducer, initialValue } from './reducers/reducers';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialValue);
-  console.log('App.js state: ', state);
+  const alphaList = state.todos.sort((todoA, todoB) => {
+    return todoA.dueDate < todoB.dueDate ? 1 : -1;
+  });
+
+  console.log('App.js alphaList: ', alphaList);
+
+  localStorage.setItem('todos', JSON.stringify(state.todos));
+  /* console.log('App.js state: ', state); */
+
   return (
     <div className='App'>
       <Form dispatch={dispatch} />
